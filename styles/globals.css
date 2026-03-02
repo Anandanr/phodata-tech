@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 :root {
-  --primary: #06b6d4;
-  --secondary: #0891b2;
-  --accent: #a855f7;
-  --bg-dark: #0f172a;
-  --bg-darker: #020617;
+  --primary: #8b5cf6;
+  --secondary: #06b6d4;
+  --accent: #f472b6;
+  --bg-dark: #09090b;
+  --bg-darker: #030305;
 }
 
 @layer base {
@@ -20,58 +20,60 @@
   body {
     @apply bg-dark-900 text-white antialiased;
     font-family: 'Inter', system-ui, sans-serif;
+    background: #09090b;
   }
 
   ::selection {
-    @apply bg-primary-500/30 text-white;
+    @apply bg-accent-500/30 text-white;
   }
 }
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-400 via-primary-500 to-secondary-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent;
   }
 
   .gradient-text-accent {
-    @apply bg-gradient-to-r from-primary-400 to-accent-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent;
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-500 to-secondary-600 text-white font-semibold px-6 py-3 rounded-xl
-           hover:shadow-glow transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5;
+    @apply bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-semibold px-6 py-3 rounded-xl
+           shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:brightness-110
+           transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5;
   }
 
   .btn-secondary {
-    @apply bg-dark-800/50 backdrop-blur-sm border border-dark-600 text-white font-semibold px-6 py-3 rounded-xl
-           hover:bg-dark-700/50 hover:border-primary-500/50 transition-all duration-300;
+    @apply bg-white/5 backdrop-blur-md border border-white/10 text-white font-semibold px-6 py-3 rounded-xl
+           hover:bg-white/10 hover:border-white/20 transition-all duration-300;
   }
 
   .btn-outline {
-    @apply border-2 border-primary-500/50 text-primary-400 font-semibold px-6 py-3 rounded-xl
-           hover:bg-primary-500/10 hover:border-primary-400 transition-all duration-300;
+    @apply border-2 border-violet-500/50 text-violet-400 font-semibold px-6 py-3 rounded-xl
+           hover:bg-violet-500/10 hover:border-violet-400 transition-all duration-300;
   }
 
   .card {
-    @apply bg-dark-800/30 backdrop-blur-sm border border-dark-700/50 rounded-2xl p-8
-           hover:border-primary-500/30 transition-all duration-300;
+    @apply bg-white/[0.03] backdrop-blur-md border border-white/[0.06] rounded-2xl p-8
+           hover:border-white/[0.12] hover:bg-white/[0.05] transition-all duration-500;
   }
 
   .card-hover {
-    @apply hover:transform hover:scale-105 hover:shadow-card-hover;
+    @apply hover:transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-violet-500/10;
   }
 
   .section-heading {
-    @apply text-4xl md:text-5xl font-bold mb-6;
+    @apply text-4xl md:text-5xl font-bold mb-6 tracking-tight;
   }
 
   .section-subtext {
-    @apply text-xl text-dark-300 max-w-3xl mx-auto leading-relaxed;
+    @apply text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed;
   }
 
   .input-field {
-    @apply w-full bg-dark-700/50 border border-dark-600 rounded-lg px-4 py-3
-           text-white placeholder-dark-400 focus:border-primary-500 focus:outline-none
-           focus:ring-2 focus:ring-primary-500/20 transition-all duration-200;
+    @apply w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3
+           text-white placeholder-zinc-500 focus:border-violet-500 focus:outline-none
+           focus:ring-2 focus:ring-violet-500/20 transition-all duration-200;
   }
 
   .badge {
@@ -79,17 +81,17 @@
   }
 
   .badge-primary {
-    @apply badge bg-primary-500/10 text-primary-400 border border-primary-500/20;
+    @apply badge bg-violet-500/10 text-violet-400 border border-violet-500/20;
   }
 
   .badge-accent {
-    @apply badge bg-accent-500/10 text-accent-400 border border-accent-500/20;
+    @apply badge bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20;
   }
 }
 
 @layer utilities {
   .text-glow {
-    text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.5), 0 0 60px rgba(139, 92, 246, 0.2);
   }
 
   .animate-glow {
@@ -102,8 +104,8 @@
   }
 
   @keyframes glow {
-    0%, 100% { box-shadow: 0 0 5px rgba(6, 182, 212, 0.3); }
-    50% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.6); }
+    0%, 100% { box-shadow: 0 0 5px rgba(139, 92, 246, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.6), 0 0 60px rgba(244, 114, 182, 0.2); }
   }
 
   @keyframes shimmer {

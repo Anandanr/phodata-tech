@@ -50,7 +50,7 @@ export default function AboutSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
   return (
-    <section id="about" className="py-20 bg-dark-800/50" ref={ref}>
+    <section id="about" className="py-20 bg-white/[0.02]" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -62,8 +62,8 @@ export default function AboutSection() {
             <span className="gradient-text">About Phodata</span>
           </h2>
           <p className="section-subtext">
-            We build reliable, scalable software solutions for businesses &mdash; from cloud-native
-            applications and API integrations to full-stack platforms and data infrastructure.
+            We build the rails that power cross-border payments &mdash; stablecoin settlement,
+            payout APIs, and compliance-ready infrastructure for emerging markets.
           </p>
         </motion.div>
 
@@ -89,40 +89,40 @@ export default function AboutSection() {
             ))}
           </div>
 
-          {/* Dashboard Preview */}
+          {/* Infrastructure Overview */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <div className="bg-gradient-to-br from-dark-800 to-dark-900 rounded-2xl p-8 border border-dark-700">
+            <div className="bg-gradient-to-br from-white/[0.03] to-transparent rounded-2xl p-8 border border-white/[0.06]">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-lg font-semibold text-white">Project Dashboard</h4>
+                  <h4 className="text-lg font-semibold text-white">Infrastructure</h4>
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-primary-500/10 border border-primary-500/20 rounded-lg p-4">
-                    <div className="text-2xl font-bold text-primary-400">12</div>
-                    <div className="text-sm text-dark-400">Active Projects</div>
+                    <div className="text-2xl font-bold text-primary-400">USD→INR</div>
+                    <div className="text-sm text-dark-400">Live Corridor</div>
                   </div>
                   <div className="bg-secondary-500/10 border border-secondary-500/20 rounded-lg p-4">
-                    <div className="text-2xl font-bold text-secondary-400">98%</div>
-                    <div className="text-sm text-dark-400">Client Satisfaction</div>
+                    <div className="text-2xl font-bold text-secondary-400">USDT</div>
+                    <div className="text-sm text-dark-400">Settlement Rail</div>
                   </div>
                 </div>
                 <div className="bg-dark-700/50 rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-dark-300">Infrastructure Health</span>
-                    <span className="text-sm text-green-400">All systems operational</span>
+                    <span className="text-sm text-zinc-400">System Status</span>
+                    <span className="text-sm text-emerald-400">All systems operational</span>
                   </div>
                   <div className="w-full bg-dark-600 rounded-full h-2">
                     <div className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full" style={{ width: '99%' }} />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  {['Payment Gateway API', 'Cloud Infrastructure', 'Data Pipeline'].map((item) => (
+                  {['Stripe Payments', 'Kraken Exchange', 'Payout API'].map((item) => (
                     <div key={item} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full" />
                       <span className="text-sm text-dark-300">{item}</span>

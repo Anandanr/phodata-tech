@@ -3,10 +3,8 @@ import Navbar from '../components/layout/Navbar'
 import HeroSection from '../components/sections/HeroSection'
 import AboutSection from '../components/sections/AboutSection'
 import ProductsSection from '../components/sections/ProductsSection'
-import ServicesSection from '../components/sections/ServicesSection'
 import TechStackSection from '../components/sections/TechStackSection'
 import FeaturesSection from '../components/sections/FeaturesSection'
-import CallToActionSection from '../components/sections/CallToActionSection'
 import ContactSection from '../components/sections/ContactSection'
 import Footer from '../components/layout/Footer'
 import { AnimationProvider } from '../components/providers/AnimationProvider'
@@ -20,10 +18,8 @@ export default function Home() {
           <HeroSection />
           <AboutSection />
           <ProductsSection />
-          <ServicesSection />
           <TechStackSection />
           <FeaturesSection />
-          <CallToActionSection />
           <ContactSection />
         </main>
         <Footer />

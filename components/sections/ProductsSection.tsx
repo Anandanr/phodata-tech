@@ -128,7 +128,7 @@ export default function ProductsSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.05 })
 
   return (
-    <section id="products" className="py-20 bg-dark-800/50" ref={ref}>
+    <section id="products" className="py-20 bg-white/[0.02]" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

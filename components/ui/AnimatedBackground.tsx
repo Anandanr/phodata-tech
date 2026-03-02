@@ -4,33 +4,46 @@ import { motion } from 'framer-motion'
 export default function AnimatedBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Animated mesh gradient blobs */}
       <motion.div
-        className="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"
+        className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-violet-600/20 via-fuchsia-500/15 to-transparent rounded-full blur-[120px]"
         animate={{
-          x: [0, 50, 0],
-          y: [0, 30, 0],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl"
-        animate={{
-          x: [0, -40, 0],
-          y: [0, -50, 0],
+          x: [0, 80, 0],
+          y: [0, 60, 0],
           scale: [1, 1.2, 1],
         }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute top-1/2 left-1/3 w-64 h-64 bg-accent-500/5 rounded-full blur-3xl"
+        className="absolute -bottom-40 -right-20 w-[500px] h-[500px] bg-gradient-to-tl from-cyan-500/20 via-blue-600/15 to-transparent rounded-full blur-[120px]"
         animate={{
-          x: [0, 30, 0],
-          y: [0, -30, 0],
-          rotate: [0, 180, 360],
+          x: [0, -60, 0],
+          y: [0, -80, 0],
+          scale: [1, 1.3, 1],
         }}
         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
       />
+      <motion.div
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-gradient-to-r from-emerald-500/10 via-teal-400/10 to-transparent rounded-full blur-[100px]"
+        animate={{
+          x: [0, 40, -40, 0],
+          y: [0, -50, 30, 0],
+          rotate: [0, 90, 180, 270, 360],
+        }}
+        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+      />
+
+      {/* Subtle grid overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px',
+        }}
+      />
+
+      {/* Radial spotlight */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-violet-500/5 via-transparent to-transparent" />
     </div>
   )
 }

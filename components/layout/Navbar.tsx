@@ -6,7 +6,6 @@ import Logo from '../ui/Logo'
 const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Products', href: '#products' },
-  { label: 'Services', href: '#services' },
   { label: 'Technology', href: '#technology' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -23,7 +22,7 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-dark-900/95 backdrop-blur-md border-b border-dark-700/50 shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-[#09090b]/90 backdrop-blur-xl border-b border-white/[0.06] shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
@@ -37,7 +36,7 @@ export default function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-dark-300 hover:text-primary-400 transition-colors duration-300 text-sm font-medium"
+                className="text-zinc-400 hover:text-white transition-colors duration-300 text-sm font-medium"
               >
                 {item.label}
               </a>
