@@ -11,12 +11,11 @@ const rotatingWords = [
 ]
 
 const apiNodes = [
-  { label: 'Payout API', x: 0, y: -1, icon: '↗' },
-  { label: 'On-Ramp', x: 0.87, y: -0.5, icon: '⬆' },
-  { label: 'Off-Ramp', x: 0.87, y: 0.5, icon: '⬇' },
-  { label: 'Stablecoin', x: 0, y: 1, icon: '◈' },
-  { label: 'KYC', x: -0.87, y: 0.5, icon: '✓' },
-  { label: 'Webhooks', x: -0.87, y: -0.5, icon: '⚡' },
+  { label: 'Payin', x: 0, y: -1 },
+  { label: 'Payout', x: 0.95, y: -0.31 },
+  { label: 'On-Ramp', x: 0.59, y: 0.81 },
+  { label: 'Off-Ramp', x: -0.59, y: 0.81 },
+  { label: 'USDT Wallet', x: -0.95, y: -0.31 },
 ]
 
 function ConnectionAnimation() {
