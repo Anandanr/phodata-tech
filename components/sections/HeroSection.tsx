@@ -39,11 +39,10 @@ export default function HeroSection() {
 
           {/* Subtext */}
           <p className="text-xl md:text-2xl text-dark-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Custom{' '}
-            <span className="text-primary-400 font-semibold">software development</span>,{' '}
-            <span className="text-secondary-400 font-semibold">cloud infrastructure</span>, and{' '}
-            <span className="text-accent-400 font-semibold">technology consulting</span>{' '}
-            to help businesses launch faster and scale smarter.
+            <span className="text-primary-400 font-semibold">Cross-border payments</span>,{' '}
+            <span className="text-secondary-400 font-semibold">stablecoin infrastructure</span>, and{' '}
+            <span className="text-accent-400 font-semibold">fintech products</span>{' '}
+            &mdash; plus custom software development and cloud consulting.
           </p>
 
           {/* CTAs */}
@@ -60,12 +59,12 @@ export default function HeroSection() {
               </svg>
             </motion.a>
             <motion.a
-              href="#services"
+              href="#products"
               className="btn-secondary text-lg px-8 py-4 flex items-center space-x-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Our Services</span>
+              <span>Our Products</span>
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>

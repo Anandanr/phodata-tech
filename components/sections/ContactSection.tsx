@@ -18,7 +18,8 @@ export default function ContactSection() {
   const onSubmit = (data: ContactForm) => {
     const subject = encodeURIComponent(`Project Inquiry from ${data.firstName} ${data.lastName}`)
     const body = encodeURIComponent(`Name: ${data.firstName} ${data.lastName}\nCompany: ${data.company}\nEmail: ${data.email}\n\n${data.message}`)
-    window.location.href = `mailto:hello@phodata.xyz?subject=${subject}&body=${body}`
+    const addr = ['support', 'phodata.xyz'].join('@')
+    window.location.href = `mailto:${addr}?subject=${subject}&body=${body}`
   }
 
   return (
@@ -116,7 +117,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-1">Email</h4>
-                    <p className="text-dark-300">hello@phodata.xyz</p>
+                    <p className="text-dark-300">Use the form to reach us</p>
                     <p className="text-dark-400 text-sm">We&apos;ll respond within 24 hours</p>
                   </div>
                 </div>

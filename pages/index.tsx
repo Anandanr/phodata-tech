@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/layout/Navbar'
 import HeroSection from '../components/sections/HeroSection'
 import AboutSection from '../components/sections/AboutSection'
+import ProductsSection from '../components/sections/ProductsSection'
 import ServicesSection from '../components/sections/ServicesSection'
 import TechStackSection from '../components/sections/TechStackSection'
 import FeaturesSection from '../components/sections/FeaturesSection'
@@ -18,6 +19,7 @@ export default function Home() {
         <main>
           <HeroSection />
           <AboutSection />
+          <ProductsSection />
           <ServicesSection />
           <TechStackSection />
           <FeaturesSection />
