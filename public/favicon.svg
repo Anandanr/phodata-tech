@@ -1,3 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#06b6d4">
-  <path d="M12 0L22 6v12L12 24 2 18V6l12-6z"/>
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="8" fill="#1a1a1e" />
+  <!-- Top-left lens -->
+  <circle cx="11" cy="11" r="5.5" stroke="#555" stroke-width="1.5" fill="#0d0d0d" />
+  <circle cx="11" cy="11" r="4" stroke="#444" stroke-width="0.7" fill="#111" />
+  <circle cx="11" cy="11" r="2.5" fill="url(#fl1)" />
+  <circle cx="9.5" cy="9.5" r="0.6" fill="rgba(255,255,255,0.5)" />
+  <!-- Top-right lens -->
+  <circle cx="22" cy="11" r="5.5" stroke="#555" stroke-width="1.5" fill="#0d0d0d" />
+  <circle cx="22" cy="11" r="4" stroke="#444" stroke-width="0.7" fill="#111" />
+  <circle cx="22" cy="11" r="2.5" fill="url(#fl2)" />
+  <circle cx="20.5" cy="9.5" r="0.6" fill="rgba(255,255,255,0.5)" />
+  <!-- Bottom-left lens -->
+  <circle cx="11" cy="22" r="5.5" stroke="#555" stroke-width="1.5" fill="#0d0d0d" />
+  <circle cx="11" cy="22" r="4" stroke="#444" stroke-width="0.7" fill="#111" />
+  <circle cx="11" cy="22" r="2.5" fill="url(#fl3)" />
+  <circle cx="9.5" cy="20.5" r="0.6" fill="rgba(255,255,255,0.5)" />
+  <!-- LiDAR / flash -->
+  <circle cx="22" cy="20" r="2" fill="#181818" stroke="#555" stroke-width="0.7" />
+  <circle cx="22" cy="20" r="0.9" fill="#666" />
+  <circle cx="22" cy="25" r="0.9" fill="#222" />
+  <defs>
+    <linearGradient id="fl1" x1="5" y1="5" x2="17" y2="17">
+      <stop stop-color="#a78bfa" /><stop offset="1" stop-color="#22d3ee" />
+    </linearGradient>
+    <linearGradient id="fl2" x1="16" y1="5" x2="28" y2="17">
+      <stop stop-color="#f472b6" /><stop offset="1" stop-color="#a78bfa" />
+    </linearGradient>
+    <linearGradient id="fl3" x1="5" y1="16" x2="17" y2="28">
+      <stop stop-color="#22d3ee" /><stop offset="1" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
 </svg>
