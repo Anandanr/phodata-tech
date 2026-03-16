@@ -5,6 +5,7 @@ import AnimatedBackground from '../ui/AnimatedBackground'
 const rotatingWords = [
   'Payments',
   'Remittance',
+  'Invoicing',
   'On-Ramp',
   'Off-Ramp',
   'Payouts',

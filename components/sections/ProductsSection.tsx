@@ -7,9 +7,10 @@ const flagship = {
   tagline: 'Cross-Border Remittance Platform',
   url: 'https://pym.ink',
   description:
-    'Send money from the US to India at the best exchange rates. Stablecoin-powered rails with bank-grade compliance — live and processing transfers today.',
+    'Send money from the US to India at the best exchange rates. Receive payments from US clients with shareable invoice links. Stablecoin-powered rails with bank-grade compliance — live and processing transfers today.',
   features: [
     'USD → INR transfers via ACH, wire, or card',
+    'Receive Money — invoice clients & get paid via card, ACH, or wire',
     'Crypto-powered settlement (USDT) for near-instant delivery',
     'Real-time exchange rates with transparent fees',
     'KYC/AML compliant — US MSB registered',
@@ -62,16 +63,6 @@ const platformAPIs = [
 ]
 
 const upcomingProducts = [
-  {
-    name: 'Invoice Payments',
-    description:
-      'Freelancers and businesses receive USD invoices, get paid in INR directly to their bank. No intermediary accounts.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-      </svg>
-    ),
-  },
   {
     name: 'Recurring Transfers',
     description:
@@ -232,10 +223,110 @@ export default function ProductsSection() {
                       Real-time P2P rates
                     </div>
                     <div className="border-t border-dark-700/50 pt-4 space-y-2">
-                      {['ACH Transfer', 'Wire Transfer', 'Card Payment'].map((m) => (
+                      {['ACH Transfer', 'Wire Transfer', 'Card Payment', 'Invoice Payments'].map((m) => (
                         <div key={m} className="flex items-center justify-between text-sm">
                           <span className="text-dark-400">{m}</span>
                           <span className="text-primary-400">Available</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ── NEW: Receive Money Highlight ── */}
+        <motion.div
+          className="mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.15, duration: 0.6 }}
+        >
+          <div className="relative overflow-hidden rounded-2xl border border-green-500/30 bg-gradient-to-br from-green-900/20 to-dark-900/80 backdrop-blur-sm">
+            <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-primary-500/5" />
+            <div className="relative p-8 md:p-12">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">Receive Money</h3>
+                    <span className="badge bg-green-500/10 text-green-400 border border-green-500/20 text-xs font-semibold">
+                      NEW
+                    </span>
+                  </div>
+                  <p className="text-lg text-green-400 font-medium mb-3">Invoice Clients &amp; Get Paid Instantly</p>
+                  <p className="text-dark-300 leading-relaxed mb-6 max-w-2xl">
+                    Freelancers and businesses in India can now create professional invoices, share payment links with US clients,
+                    and receive payments via card, ACH, or wire &mdash; directly to their bank account. No intermediary accounts needed.
+                  </p>
+                  <ul className="space-y-2 mb-8">
+                    {[
+                      'Create & send professional invoices in seconds',
+                      'Shareable payment links — clients pay via card, ACH, or bank transfer',
+                      'Auto-generated PDF invoices with your branding',
+                      'Real-time payment status tracking',
+                      'Free invoice generator available — no signup required',
+                    ].map((f) => (
+                      <li key={f} className="flex items-center space-x-3 text-dark-300 text-sm">
+                        <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <motion.a
+                      href="https://pym.ink"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center space-x-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <span>Start Receiving Payments</span>
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </motion.a>
+                    <motion.a
+                      href="https://pym.ink/tools/invoice-generator"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-secondary inline-flex items-center space-x-2"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <span>Try Free Invoice Generator</span>
+                    </motion.a>
+                  </div>
+                </div>
+
+                {/* Visual */}
+                <div className="md:w-72 flex-shrink-0">
+                  <div className="bg-dark-800/60 border border-green-500/20 rounded-xl p-6 space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-dark-300">How It Works</span>
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                    </div>
+                    <div className="space-y-3">
+                      {[
+                        { step: '1', label: 'Create an invoice' },
+                        { step: '2', label: 'Share link with client' },
+                        { step: '3', label: 'Client pays via card/ACH' },
+                        { step: '4', label: 'Money hits your bank' },
+                      ].map((s) => (
+                        <div key={s.step} className="flex items-center space-x-3">
+                          <div className="w-7 h-7 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+                            {s.step}
+                          </div>
+                          <span className="text-dark-300 text-sm">{s.label}</span>
                         </div>
                       ))}
                     </div>
