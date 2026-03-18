@@ -296,7 +296,7 @@ export default function ProductsSection() {
                       </svg>
                     </motion.a>
                     <motion.a
-                      href="https://pym.ink/tools/invoice-generator"
+                      href="https://www.pym.ink/invoice"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-secondary inline-flex items-center space-x-2"
