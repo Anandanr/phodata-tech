@@ -84,16 +84,6 @@ const upcomingProducts = [
     ),
   },
   {
-    name: 'Payroll & Bulk Payouts',
-    description:
-      'Pay remote teams and contractors in India. Upload a CSV, we handle FX and distribution via IMPS.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-      </svg>
-    ),
-  },
-  {
     name: 'Multi-Corridor APAC',
     description:
       'Expanding beyond India — USD to Philippines, Vietnam, Bangladesh, and more using the same stablecoin rails.',
@@ -337,13 +327,112 @@ export default function ProductsSection() {
           </div>
         </motion.div>
 
+        {/* ── NEW: Pym Business / Payroll ── */}
+        <motion.div
+          className="mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
+          <div className="relative overflow-hidden rounded-2xl border border-blue-500/30 bg-gradient-to-br from-blue-900/20 to-dark-900/80 backdrop-blur-sm">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5" />
+            <div className="relative p-8 md:p-12">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">Pym Business</h3>
+                    <span className="badge bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-semibold">
+                      NEW
+                    </span>
+                  </div>
+                  <p className="text-lg text-blue-400 font-medium mb-3">Payroll &amp; Bulk Payouts for Remote Teams</p>
+                  <p className="text-dark-300 leading-relaxed mb-6 max-w-2xl">
+                    US companies and startups can now pay their remote employees and contractors in India at the best exchange rates.
+                    Upload a CSV, we handle FX and distribute funds via IMPS &mdash; no per-transfer hassle, no hidden fees.
+                  </p>
+                  <ul className="space-y-2 mb-8">
+                    {[
+                      'Pay remote teams & contractors in India from your US account',
+                      'Bulk payouts via CSV upload — handle 100s of transfers at once',
+                      'Automatic FX conversion at real-time interbank rates',
+                      'IMPS / UPI / NEFT delivery to any Indian bank account',
+                      'Itemized payment records for accounting & compliance',
+                      'Webhook notifications for every payout status update',
+                    ].map((f) => (
+                      <li key={f} className="flex items-center space-x-3 text-dark-300 text-sm">
+                        <svg className="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <motion.a
+                      href="https://www.pym.ink/business"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <span>Run Payroll with Pym</span>
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </motion.a>
+                    <motion.a
+                      href="mailto:hello@phodata.xyz"
+                      className="btn-secondary inline-flex items-center space-x-2"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <span>Contact for Enterprise</span>
+                    </motion.a>
+                  </div>
+                </div>
+
+                {/* Visual */}
+                <div className="md:w-72 flex-shrink-0">
+                  <div className="bg-dark-800/60 border border-blue-500/20 rounded-xl p-6 space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-dark-300">Payroll Run</span>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+                    </div>
+                    <div className="space-y-3">
+                      {[
+                        { step: '1', label: 'Upload employee CSV' },
+                        { step: '2', label: 'Review FX rates & fees' },
+                        { step: '3', label: 'Confirm & fund in USD' },
+                        { step: '4', label: 'INR lands in bank accounts' },
+                      ].map((s) => (
+                        <div key={s.step} className="flex items-center space-x-3">
+                          <div className="w-7 h-7 bg-blue-500/20 text-blue-400 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+                            {s.step}
+                          </div>
+                          <span className="text-dark-300 text-sm">{s.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* ── Platform API Services ── */}
         <div className="mb-20">
           <motion.div
             className="text-center mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            transition={{ delay: 0.25, duration: 0.6 }}
           >
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Platform APIs</h3>
             <p className="text-dark-300 max-w-2xl mx-auto">
